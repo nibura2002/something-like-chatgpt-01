@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* 背景色を白に */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar {
+    background-color: #e9e9e9; /* 薄いグレー */
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    width: 20%; /* 幅を割合で設定 */
+    min-width: 200px; /* 最小幅を設定 */
+    max-width: 300px; /* 最大幅を設定 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto; /* 全体が埋まるようにスクロールを追加 */
+}
+
+.model-select-box {
+    margin-bottom: 10px; /* モデル選択ボタンを上部に寄せる */
+    display: flex;
+    justify-content: flex-start; /* 左寄せ */
+    margin-left: 20px; /* 左に隙間を追加 */
+    margin-top: 10px; /* 上に隙間を追加 */
+}
+
+select {
+    padding: 5px; /* 元の大きさの半分 */
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem; /* 通常の大きさに戻す */
+    background: transparent; /* 背景を透明に */
+    color: black; /* テキスト色を黒に */
+    cursor: pointer;
+}
+
+h2 {
+    margin-top: 0; /* マージンを調整 */
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.sidebar li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.sidebar button {
+    padding: 10px;
+    background-color: #808080; /* グレー */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.sidebar button:hover {
+    background-color: #666666; /* 濃いグレー */
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #fff; /* 背景色を白に */
+}
+
+.chat-box {
+    padding: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: #fff; /* 背景色を白に */
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.input-box {
+    display: flex;
+    padding: 20px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+button {
+    padding: 10px;
+    background-color: #808080; /* グレー */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #666666; /* 濃いグレー */
+}
+
+.user-message, .assistant-message {
+    max-width: 80%; /* 最大幅を設定 */
+    word-wrap: break-word; /* 長い単語を折り返し */
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.user-message {
+    text-align: left; /* テキストを左寄せ */
+    color: #333;
+    background-color: #e9e9e9; /* 薄いグレー */
+    float: right;
+    clear: both;
+}
+
+.assistant-message {
+    text-align: left;
+    color: #000; /* 黒字 */
+    background-color: transparent; /* 背景色なし */
+    float: left;
+    clear: both;
+}
+
+.thinking-indicator {
+    display: inline-block;
+    font-size: 20px;
+    animation: thinking 1s steps(4, end) infinite;
+}
+
+@keyframes thinking {
+    0% { content: '...'; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+}
